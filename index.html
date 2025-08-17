@@ -15,6 +15,9 @@
             background-color: #f8f9fa; /* Light Gray */
             color: #3c4043;
         }
+        body.no-scroll {
+            overflow: hidden;
+        }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Google Sans', sans-serif;
             font-weight: 700;
@@ -138,11 +141,11 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased no-scroll">
 
-    <div id="landing-page" class="fixed inset-0 bg-white z-[100] flex flex-col items-center justify-center p-4 transition-opacity duration-700 ease-in-out">
+    <div id="landing-page" class="fixed inset-0 bg-white z-[100] flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out">
         <video id="intro-video" src="https://raw.githubusercontent.com/tusharjoshi0912-cell/Gemini-intro-logo/main/Gemini_PrimaryLogo_FullColor_OnWhite.mp4" autoplay muted playsinline class="max-w-full max-h-full"></video>
-        <div id="continue-prompt" class="absolute bottom-5 text-gray-500 text-sm animate-pulse hidden">Press any key to continue</div>
+        <div id="continue-prompt" class="absolute bottom-5 text-gray-500 text-sm animate-pulse hidden">Press any key or tap screen to continue</div>
     </div>
 
     <div id="main-content" class="opacity-0 transition-opacity duration-700 ease-in-out">
@@ -478,16 +481,23 @@
 
             introVideo.addEventListener('ended', () => {
                 continuePrompt.classList.remove('hidden');
-                window.addEventListener('keydown', function handleFirstKeyPress() {
+                
+                function proceedToMainContent() {
                     landingPage.style.opacity = '0';
                     mainContent.style.opacity = '1';
                     
                     setTimeout(() => {
                         landingPage.style.display = 'none';
                     }, 700);
+                    
+                    window.removeEventListener('keydown', proceedToMainContent);
+                    window.removeEventListener('touchstart', proceedToMainContent);
+                    window.removeEventListener('click', proceedToMainContent);
+                }
 
-                    window.removeEventListener('keydown', handleFirstKeyPress);
-                }, { once: true });
+                window.addEventListener('keydown', proceedToMainContent, { once: true });
+                window.addEventListener('touchstart', proceedToMainContent, { once: true });
+                window.addEventListener('click', proceedToMainContent, { once: true });
             });
 
             // --- Page Navigation Logic ---
