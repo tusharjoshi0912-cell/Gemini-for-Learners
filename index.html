@@ -485,6 +485,7 @@
                 function proceedToMainContent() {
                     landingPage.style.opacity = '0';
                     mainContent.style.opacity = '1';
+                    document.body.classList.remove('no-scroll');
                     
                     setTimeout(() => {
                         landingPage.style.display = 'none';
