@@ -145,7 +145,7 @@
 
     <div id="landing-page" class="fixed inset-0 bg-white z-[100] flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out">
         <video id="intro-video" src="https://raw.githubusercontent.com/tusharjoshi0912-cell/Gemini-intro-logo/main/Gemini_PrimaryLogo_FullColor_OnWhite.mp4" autoplay muted playsinline class="max-w-full max-h-full"></video>
-        <div id="continue-prompt" class="absolute bottom-5 text-gray-500 text-sm animate-pulse hidden">Press any key or tap screen to continue</div>
+        <div id="continue-prompt" class="absolute bottom-10 text-gray-800 text-lg font-semibold animate-pulse hidden bg-white/50 backdrop-blur-sm p-3 rounded-lg">Press any key or tap screen to continue</div>
     </div>
 
     <div id="main-content" class="opacity-0 transition-opacity duration-700 ease-in-out">
@@ -156,8 +156,8 @@
                     <span class="text-2xl font-bold gemini-gradient-text hidden sm:block">AI for Smarter Learning</span>
                 </div>
                 <div class="dropdown">
-                    <button id="menu-button" class="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <button id="menu-button" class="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-50 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
                     <div id="menu-dropdown" class="dropdown-menu">
                         <a href="#introduction" class="dropdown-item">Introduction</a>
@@ -462,7 +462,7 @@
                     <h1 class="text-3xl font-bold mb-4">Workshop Resources</h1>
                     <p class="text-md text-gray-600 mb-8">Scan the QR code below to access a digital copy of all workshop materials.</p>
                     <div class="flex justify-center">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://typical-amethyst-yefg9fveiv.edgeone.app" alt="Workshop Resources QR Code" class="rounded-lg shadow-md">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://gemini-workshop-material.vercel.app/" alt="Workshop Resources QR Code" class="rounded-lg shadow-md">
                     </div>
                 </div>
                 <footer class="mt-12 border-t pt-6 text-center text-sm text-gray-500">
@@ -634,3 +634,4 @@
 
 </body>
 </html>
+
